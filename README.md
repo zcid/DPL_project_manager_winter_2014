@@ -14,3 +14,5 @@ Students will be given tasks/requirements to perform. Students will submit Pull 
 	- Static Pages Controller
 	- Home page
 	- About page
+- Add bootstrap
+- Style your home and about page
