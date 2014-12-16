@@ -16,3 +16,5 @@ Students will be given tasks/requirements to perform. Students will submit Pull 
 	- About page
 - Add bootstrap
 - Style your home and about page
+
+# When I was a child I went to the carnival. I ate all the cotton candy I could find. I found it under bleachers, behind trash cans, and I stole some from my brother (who cried). I was the happiest boy in the whole world. It was the best decision of my life. Donkey.
