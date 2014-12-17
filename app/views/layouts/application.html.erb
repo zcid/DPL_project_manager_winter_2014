@@ -9,8 +9,11 @@
 <body>
 
 	<%= render 'layouts/navbar' %>
-		<div class='main-body container'>
-	<%= yield %>
+	<div class='main-body container'>
+		<div class="row">
+  		<div class="col-md-2"><%= render 'layouts/sidebar' %></div>
+  		<div class="col-md-10"><%= yield %></div>
+		</div>
 	</div>
 
 </body>
