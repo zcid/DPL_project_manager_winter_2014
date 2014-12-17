@@ -39,7 +39,7 @@ $navbar-height: 100px;
 	color: #2B382F;
 	font-size: 4em;
 	font-weight: bold;
-	font-family: 'Garamond';
+	font-family: 'Futura';
 	font-variant: small-caps;
 	&:hover {
 		color: #FAEAD0;
@@ -54,8 +54,14 @@ $navbar-height: 100px;
 	}
 }
 
+.logo {
+	padding-top: 15px;
+	padding-bottom: 25px;
+	padding-left: 30px;
+}
+
 body {
-	background-color: #2B382F;
+	background-color: #313131;
 	color: #FAEAD0;
 }
 
@@ -64,8 +70,9 @@ body {
 }
 
 .sidebar-header {
-	font-family: 'Garamond';
+	font-family: 'Futura';
 	font-size: 2.5em;
+	text-align: center;
 }
 
 .sidebar-list {
@@ -89,8 +96,8 @@ body {
 		color: #7B8D53;
 	}
 	p {
-		font-family: 'Garamond';
-		font-size: 1.75em;
+		font-family: 'Futura';
+		font-size: 1.5em;
 		text-align: justify;
 		padding-bottom: 20px;
 	}
