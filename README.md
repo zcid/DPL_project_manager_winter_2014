@@ -17,4 +17,10 @@ Students will be given tasks/requirements to perform. Students will submit Pull 
 - Add bootstrap
 - Style your home and about page
 
+#Phase 2
+- Build a Project model, controller, and views
+- Build a Task model, controller, and views
+- Associate projects and tasks so that a project has_many tasks, and a task belongs_to a project
+
+
 # When I was a child I went to the carnival. I ate all the cotton candy I could find. I found it under bleachers, behind trash cans, and I stole some from my brother (who cried). I was the happiest boy in the whole world. It was the best decision of my life. Donkey.
