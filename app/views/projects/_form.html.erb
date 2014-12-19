@@ -1,0 +1,11 @@
+	<%= bootstrap_form_for(@project) do |f| %>
+		  <%= f.text_field :team %>
+	  
+		  <%= f.text_field :title %>
+	  
+		  <%= f.text_area :description %>
+	  
+		  <%= f.date_field :deadline %>
+		  
+	  	<%= f.submit %>
+	<% end %>

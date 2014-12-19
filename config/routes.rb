@@ -1,7 +1,17 @@
 Rails.application.routes.draw do
+  get 'tasks/new'
+
+  get 'task/edit'
+  
+
   root 'static_pages#home'
 
   get 'about' => 'static_pages#about'
+
+  resources :projects do
+    resources :tasks, except: [:show, :index]
+  end
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
