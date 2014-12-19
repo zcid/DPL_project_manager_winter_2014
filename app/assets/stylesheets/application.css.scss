@@ -113,3 +113,46 @@ body {
 		color: #7B8D53;
 	}
 }
+
+/* ----------------------------
+
+         Media Queries
+
+------------------------------ */
+
+@media screen and (max-width: 1050px) {
+	.nav-text {
+		font-size: 1em;
+	}
+
+	.navbar-inverse
+	.navbar-brand {
+		font-size: 3em;
+	}
+
+	.home-content {
+		p {
+			font-size: 1.25em;
+		}
+	}
+
+	.sidebar-header {
+		font-size: 2em;
+	}
+
+	.sidebar-list {
+		li {
+			font-size: 1em;
+		}
+	}
+
+	.about-list {
+		padding: none;
+		li {
+			font-size: 1.25em;
+		}
+	}
+}
+
+
+
