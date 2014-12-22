@@ -15,14 +15,14 @@
 			</tr>
 		</thead>
 			<tr class="table-list">
-			  <td class="col-md-2.4"><%= @project.team %></td> 
+			  <td class="col-md-2.4"><%= @project.team %></td>
 			  <td class="col-md-2"><%= @project.title %></td>
 			  <td class="col-md-4"><%= @project.description %></td>
 			  <td class="col-md-1"><%= @project.deadline %></td>
 			  <td class="col-md-2.6 btn-group.btn-group-justified btn-group-sm" role="group">
-			  	<button type="button" class="btn btn-default"><%= link_to 'Back', projects_path %></button>
-			    <button type="button" class="btn btn-default"><%= link_to 'Edit', edit_project_path %></button>
-			    <button type="button" class="btn btn-default"><%= link_to 'Delete', project_path(@project.id), method: :delete, data: { confirm: 'Are you sure?' } %></button>
+			  	<%= link_to 'Back', projects_path, class: "btn btn-default" %>
+			    <%= link_to 'Edit', edit_project_path, class: "btn btn-default" %>
+			    <%= link_to 'Delete', project_path(@project.id), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %>
 			  </td>
 			  </div>
 			</tr>
@@ -46,13 +46,13 @@
                   <td class="col-md-1.5"><%= task.deadline %></td>
                   <td class="col-md-1"><%= task.is_completed %></td>
                   <td class="col-md-1.5 btn-group.btn-group-justified btn-group-sm" role="group">
-                  	<button type="button" class="btn btn-default"><%= link_to 'Edit', edit_project_task_path(@project, task) %></button>
-                    <button type="button" class="btn btn-default"><%= link_to 'Delete', project_task_path(@project, task), method: :delete, data: { confirm: 'Are you sure?' } %></button>
+                  	<%= link_to 'Edit', edit_project_task_path(@project, task), class: "btn btn-default" %>
+                    <%= link_to 'Delete', project_task_path(@project, task), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %>
                   </td>
-                  
+
               </tr>
           <% end %>
         </tbody>
     </table>
-	<button type="button" class="btn btn-default"><%= link_to 'New Task', new_project_task_path(@project) %></button>
+		<%= link_to 'New Task', new_project_task_path(@project), class: "btn btn-default" %>
 </html>

@@ -5,7 +5,7 @@
 		<title>Projects Page</title>
 	</head>
 	<body>
-		<h1 class="text-center">Projects</h1>   
+		<h1 class="text-center">Projects</h1>
     <table class="table table-bordered row">
     	<thead>
     		<tr>
@@ -13,7 +13,7 @@
     			<th class="col-md-2">Title</th>
     			<th class="col-md-5 text-nowrap">Description</th>
     			<th class="col-md-1">Deadline</th>
-                <th class="col-md-1"></th>
+          <th class="col-md-1">Updates</th>
     		</tr>
     	</thead>
     	<tbody  class="table-list">
@@ -23,11 +23,11 @@
     			  <td class="col-md-2"><%= project.title %></td>
     			  <td class="col-md-5"><%= project.description %></td>
     			  <td class="col-md-1"><%= project.deadline %></td>
-    			  <td class="col-md-1 text-center"><%= link_to 'Project', project_path(project) %></td>
+    			  <td class="col-md-1 text-center"><%= link_to 'Project', project_path(project), class: "btn btn-default" %></td>
     		  </tr>
     	  <% end %>
     	</tbody>
     </table>
-    <button type="button" class="btn btn-default"><%= link_to 'New Project', new_project_path %></button>
+    <%= link_to 'New Project', new_project_path, class: "btn btn-default" %>
 	</body>
 </html>
