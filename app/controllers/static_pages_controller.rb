@@ -4,4 +4,8 @@ class StaticPagesController < ApplicationController
 
   def about
   end
+
+  def easter_egg
+    @stuff = 'You found it!'
+  end
 end
