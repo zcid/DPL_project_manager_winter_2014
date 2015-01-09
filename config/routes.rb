@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   get 'about' => 'static_pages#about'
 
+  get 'easter_egg' => 'static_pages#easter_egg'
+
   resources :projects do
     resources :tasks, except: [:show, :index]
   end
