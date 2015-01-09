@@ -9,4 +9,7 @@
 		  <%= f.date_field :deadline %>
 		  
 	  	<%= f.submit %>
+	  	<% if using_modal %>
+	  	  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	  	<% end %>
 	<% end %>
