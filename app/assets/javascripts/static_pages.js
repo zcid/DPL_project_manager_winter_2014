@@ -6,6 +6,13 @@ $(function(){ // Document Ready
 
   $('#easter-icon').click(function(){
     $('#hidden-easter-link').click();
+    var $konami = $(".konami");
+    if ($konami.css("display") == "none") {
+      $konami.css("display", "block");
+    }
+    else {
+      $konami.css("display", "none");
+    }
   });
 
   $('#jquery-ajax-button').click(function(){
