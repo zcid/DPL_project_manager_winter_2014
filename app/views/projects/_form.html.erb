@@ -1,4 +1,5 @@
-	<%= bootstrap_form_for(@project) do |f| %>
+
+	<%= bootstrap_form_for(@project, remote: using_modal) do |f| %>
 		  <%= f.text_field :team %>
 	  
 		  <%= f.text_field :title %>
