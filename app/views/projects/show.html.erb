@@ -1,8 +1,4 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Project</title>
-  </head>
+
   <h1>Project</h1>
   <table class="table table-bordered row text-center">
     <thead>
@@ -24,11 +20,10 @@
           <%= link_to 'Edit', edit_project_path, class: "btn btn-default" %>
           <%= link_to 'Delete', project_path(@project.id), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %>
         </td>
-        </div>
       </tr>
   </table>
   <h2>Tasks</h2>
-    <table class="table table-bordered row text-center">
+    <table class="table table-bordered row text-center tasks_table">
         <thead>
             <tr>
                 <th class="col-md-3 text-center">Title</th>
@@ -41,7 +36,7 @@
         <tbody>
             <% @project.tasks.each do |task| %>
               <tr class="table-list">
-                  <td class="col-md-3"><%= task.title %></td>
+                  <td class="col-md-3 task-title"><%= task.title %></td>
                   <td class="col-md-5"><%= task.description %></td>
                   <td class="col-md-1.5"><%= task.deadline %></td>
                   <td class="col-md-1"><%= task.is_completed %></td>
@@ -55,4 +50,3 @@
         </tbody>
     </table>
     <%= link_to 'New Task', new_project_task_path(@project), class: "btn btn-default" %>
-</html>
