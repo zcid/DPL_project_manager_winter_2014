@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-  before_action :set_project, only: [:new, :update, :create, :destroy, :edit, :mark_completed]
+  before_action :set_project, only: [:new, :update, :create, :destroy, :edit, :mark_completed, :mark_not_completed]
   before_action :set_task, only: [:edit, :update, :destroy]
 
   def new
@@ -32,11 +32,19 @@ class TasksController < ApplicationController
   end
 
   def mark_completed
-    @task = @project.tasks.find_by(id: params[:task_id])
-    @task.update_attributes(is_completed: true)
+    set_completed_flag(params[:task_id], true)
+  end
+
+  def mark_not_completed
+    set_completed_flag(params[:task_id], false)
   end
 
   private
+
+    def set_completed_flag(task_id, complete_value)
+      @task = @project.tasks.find_by(id: task_id)
+      @task.update_attributes(is_completed: complete_value)
+    end
 
     def set_task
       @task = Task.find(params[:id])

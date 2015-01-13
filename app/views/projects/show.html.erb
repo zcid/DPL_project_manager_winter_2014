@@ -41,7 +41,13 @@
                   <td class="col-md-1.5"><%= task.deadline %></td>
                   <td class="col-md-1 task-completed"><%= task.is_completed %></td>
                   <td class="col-md-1.5 btn-group.btn-group-justified btn-group-sm" role="group">
-                    <%= link_to 'Completed!', project_task_complete_task_path(@project, task), remote: true, method: 'patch', class: "btn btn-default" %>
+                    <div class='task_complete_button_div <%= "hidden" unless task.is_completed %>'>
+                      <%= link_to 'UNDO Completion!', project_task_uncomplete_task_path(@project, task), remote: true, method: 'patch', class: "btn btn-warning" %>
+                    </div>
+                    <div class='task_complete_button_div <%= "hidden" if task.is_completed? %>'>
+                      <%= link_to 'Completed!', project_task_complete_task_path(@project, task), remote: true, method: 'patch', class: "btn btn-default" %>
+                    </div>
+
                     <%= link_to 'Edit', edit_project_task_path(@project, task), class: "btn btn-default" %>
                     <%= link_to 'Delete', project_task_path(@project, task), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %>
                   </td>

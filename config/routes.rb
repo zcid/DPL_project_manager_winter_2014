@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   resources :projects do
     resources :tasks, except: [:show, :index] do
       patch 'complete_task' => 'tasks#mark_completed'
+      patch 'uncomplete_task' => 'tasks#mark_not_completed'
     end
   end
 
