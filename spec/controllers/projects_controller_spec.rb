@@ -36,10 +36,27 @@ describe ProjectsController do
         expect(response.body).to match first_task.title
       end
     end
-
     
   end
 
+  describe 'PATCH #update' do
+    let(:project) { create(:project) }
+    context 'project is not updated due to validation' do
+      it 'renders the edit page' do
+        patch :update, id: project, project: { title: '' }
+
+        expect(response).to render_template(:edit)
+      end
+    end
+
+    context 'update of project is successful' do
+      it 'render the show page for the project' do
+        patch :update, id: project, project: { title: 'New Title' }
+
+        expect(response).to redirect_to(assigns(:project))
+      end
+    end
+  end
 
   describe 'GET #new' do
     it 'renders successfully' do
