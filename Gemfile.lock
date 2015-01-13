@@ -52,6 +52,11 @@ GEM
     diff-lcs (1.2.5)
     erubis (2.7.0)
     execjs (2.2.2)
+    factory_girl (4.4.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.4.1)
+      factory_girl (~> 4.4.0)
+      railties (>= 3.0.0)
     ffi (1.9.6)
     font-awesome-sass (4.2.2)
       sass (~> 3.2)
@@ -191,6 +196,7 @@ DEPENDENCIES
   bootstrap-sass
   bootstrap_form
   coffee-rails (~> 4.0.0)
+  factory_girl_rails
   font-awesome-sass
   guard-rspec
   jbuilder (~> 2.0)
