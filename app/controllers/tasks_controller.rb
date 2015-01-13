@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-  before_action :set_project, only: [:new, :update, :create, :destroy, :edit]
+  before_action :set_project, only: [:new, :update, :create, :destroy, :edit, :mark_completed]
   before_action :set_task, only: [:edit, :update, :destroy]
 
   def new
@@ -28,6 +28,12 @@ class TasksController < ApplicationController
 
   def destroy
     @task.destroy
+    redirect_to @project
+  end
+
+  def mark_completed
+    @task = @project.tasks.find_by(id: params[:task_id])
+    @task.update_attributes(is_completed: true)
     redirect_to @project
   end
 

@@ -12,7 +12,9 @@ Rails.application.routes.draw do
   post 'easter_egg' => 'static_pages#easter_egg'
 
   resources :projects do
-    resources :tasks, except: [:show, :index]
+    resources :tasks, except: [:show, :index] do
+      patch 'complete_task' => 'tasks#mark_completed'
+    end
   end
 
 
