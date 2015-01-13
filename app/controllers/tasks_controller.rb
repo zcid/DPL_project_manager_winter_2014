@@ -34,7 +34,6 @@ class TasksController < ApplicationController
   def mark_completed
     @task = @project.tasks.find_by(id: params[:task_id])
     @task.update_attributes(is_completed: true)
-    redirect_to @project
   end
 
   private
