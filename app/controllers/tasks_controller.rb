@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
-  before_action :set_project, only: [:new, :update, :create, :destroy, :edit]
-  before_action :set_task, only: [:edit, :update, :destroy]
+  before_action :set_project, only: [:new, :update, :create, :destroy, :edit, :toggle]
+  before_action :set_task, only: [:edit, :update, :destroy, :toggle]
 
   def new
     @task = @project.tasks.build
@@ -29,6 +29,10 @@ class TasksController < ApplicationController
   def destroy
     @task.destroy
     redirect_to @project
+  end
+
+  def toggle
+    @task.toggle!(:is_completed)
   end
 
   private

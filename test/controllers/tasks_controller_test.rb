@@ -7,4 +7,10 @@ class TasksControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  test "should toggle completed" do
+    get :toggle, id: tasks(:one).id
+    assert_response :success
+    assert_not_equal assigns(:is_completed)
+  end
+
 end
