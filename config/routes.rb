@@ -12,8 +12,10 @@ Rails.application.routes.draw do
   post 'easter_egg' => 'static_pages#easter_egg'
 
   resources :projects do
-    resources :tasks, except: [:show, :index]
-    put '/task/:id', to: 'tasks#toggle', as: :toggle
+    resources :tasks, except: [:show, :index] do
+      patch 'complete_task' => 'tasks#mark_completed'
+      patch 'uncomplete_task' => 'tasks#mark_not_completed'
+    end
   end
 
 

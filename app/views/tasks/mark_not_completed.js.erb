@@ -1,0 +1,3 @@
+var $row = $('table.tasks_table tr[data-id=<%= @task.id %>]');
+$row.find('td.task-completed').html('false');
+$row.find('div.task_complete_button_div').toggleClass('hidden');

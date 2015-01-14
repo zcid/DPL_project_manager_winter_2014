@@ -34,6 +34,15 @@ gem 'pry-rails'
 # Awesome fonts yo!
 gem 'font-awesome-sass'
 
+group :development, :test do
+  gem 'spring-commands-rspec'
+  gem 'rspec-rails'
+  gem 'guard-rspec'
+  gem 'factory_girl_rails'
+end
+
+gem 'simplecov', :require => false, :group => :test
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
