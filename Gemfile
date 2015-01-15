@@ -34,6 +34,9 @@ gem 'pry-rails'
 # Awesome fonts yo!
 gem 'font-awesome-sass'
 
+# User authentication
+gem 'devise'
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
