@@ -26,17 +26,17 @@ describe ProjectsController do
       it 'shows all tasks for a given project' do
         get :show, id: project
         expect(response).to render_template(:show)
-        expect(assigns(:project).tasks).not_to be_empty 
+        expect(assigns(:project).tasks).not_to be_empty
         expect(assigns(:project).tasks.count).to eq 2
       end
 
-      it 'shows a specific task for a given project' do    
+      it 'shows a specific task for a given project' do
         get :show, id: project
         expect(assigns(:project).tasks).not_to be_empty
         expect(response.body).to match first_task.title
       end
     end
-    
+
   end
 
   describe 'PATCH #update' do
@@ -64,5 +64,34 @@ describe ProjectsController do
       expect(response).to have_http_status(:success)
     end
   end
+
+  describe 'POST #create' do
+    let(:project) { create(:project) }
+    context 'project is not created due to validation' do
+      it 'render the new page' do
+        post :create, project: { title: '' }
+
+        expect(response).to render_template(:new)
+      end
+    end
+
+    context 'create of project was successful' do
+      it 'render the show page for the project' do
+        post :create, project: attributes_for(:project)
+
+        expect(response).to redirect_to(assigns(:project))
+      end
+    end
+  end
+
+  describe 'DELETE #destroy' do
+    let(:project) { create(:project) }
+      it 'deletes a project' do
+        delete :destroy, id: project
+
+        expect(response).to redirect_to(:projects)
+      end
+  end
+
 
 end

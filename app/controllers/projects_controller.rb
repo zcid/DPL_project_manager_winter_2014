@@ -11,6 +11,7 @@ class ProjectsController < ApplicationController
     @project = Project.new
   end
 
+
   def create
     @project = Project.new(project_params)
     if @project.save
@@ -19,6 +20,7 @@ class ProjectsController < ApplicationController
         format.js
       end
     else
+      flash[:error] = @project.errors.full_messages
       render :new
     end
   end

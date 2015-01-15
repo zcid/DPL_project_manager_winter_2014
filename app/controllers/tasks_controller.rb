@@ -1,11 +1,8 @@
 class TasksController < ApplicationController
-<<<<<<< HEAD
-  before_action :set_project, only: [:new, :update, :create, :destroy, :edit, :toggle]
-  before_action :set_task, only: [:edit, :update, :destroy, :toggle]
-=======
+
   before_action :set_project, only: [:new, :update, :create, :destroy, :edit, :mark_completed, :mark_not_completed]
   before_action :set_task, only: [:edit, :update, :destroy]
->>>>>>> 9fda5f9cd8418baeb9d73c62dcf97932891f1271
+
 
   def new
     @task = @project.tasks.build
