@@ -1,6 +1,7 @@
 class TasksController < ApplicationController
   before_action :set_project, only: [:new, :update, :create, :destroy, :edit]
   before_action :set_task, only: [:edit, :update, :destroy]
+  before_action :set_users, only: [:new, :edit]
   before_action :authenticate_user!
 
   def new
@@ -42,7 +43,11 @@ class TasksController < ApplicationController
       @project = Project.find(params[:project_id])
     end
 
+    def set_users
+      @users = User.all
+    end
+
     def task_params
-      params.require(:task).permit(:title, :description, :deadline, :is_completed)
+      params.require(:task).permit(:title, :description, :deadline, :is_completed, :user_id)
     end
 end

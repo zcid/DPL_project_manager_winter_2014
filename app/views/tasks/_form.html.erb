@@ -6,6 +6,8 @@
 
   <%= f.date_field :deadline %>
 
+  <%= f.collection_select(:user_id, @users, :id, :email) %>
+
   <%= f.check_box :is_completed %>
 
   <%= f.submit %>
