@@ -36,6 +36,7 @@ gem 'font-awesome-sass'
 
 group :development, :test do
   gem 'spring-commands-rspec'
+  gem 'rspec'
   gem 'rspec-rails'
   gem 'guard-rspec'
   gem 'factory_girl_rails'
