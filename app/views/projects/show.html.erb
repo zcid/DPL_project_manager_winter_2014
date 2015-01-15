@@ -35,6 +35,7 @@
         </thead>
         <tbody>
             <% @project.tasks.each do |task| %>
+
               <tr class="table-list" data-id='<%= task.id %>'>
                   <td class="col-md-3 task-title"><%= task.title %></td>
                   <td class="col-md-5"><%= task.description %></td>
@@ -49,7 +50,7 @@
                     </div>
 
                     <%= link_to 'Edit', edit_project_task_path(@project, task), class: "btn btn-default" %>
-                    <%= link_to 'Delete', project_task_path(@project, task), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %>
+                    <%= link_to 'Delete', project_task_path(@project, task), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
                   </td>
 
               </tr>
