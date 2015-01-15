@@ -15,3 +15,19 @@
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .
+
+$(function () {
+  $('[data-toggle="popover"]').popover()
+});
+
+
+$(function(){
+  $("#easter-icon").popover({
+    placement: 'right',
+    html: 'true',
+    content : '<i class="fa fa-arrow-up"></i>  <i class="fa fa-arrow-up"></i>  <i class="fa fa-arrow-down"></i>  <i class="fa fa-arrow-down"></i>  <i class="fa fa-arrow-left"></i>  <i class="fa fa-arrow-right"></i>  <i class="fa fa-arrow-left"></i>  <i class="fa fa-arrow-right"></i>  B  A  Start'
+  })
+  $('html').click(function() {
+    $('#close').popover('hide');
+  });
+});
