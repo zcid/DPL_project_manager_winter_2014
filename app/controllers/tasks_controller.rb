@@ -1,6 +1,7 @@
 class TasksController < ApplicationController
   before_action :set_project, only: [:new, :update, :create, :destroy, :edit]
   before_action :set_task, only: [:edit, :update, :destroy]
+  before_action :authenticate_user!
 
   def new
     @task = @project.tasks.build
