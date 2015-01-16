@@ -29,7 +29,9 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 gem 'better_errors'
 gem 'binding_of_caller'
+gem 'pry-byebug'
 gem 'pry-rails'
+gem 'httparty'
 
 # Awesome fonts yo!
 gem 'font-awesome-sass'
