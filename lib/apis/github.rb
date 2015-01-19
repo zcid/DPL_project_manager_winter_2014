@@ -4,6 +4,7 @@ module Apis
 
     AUTHORIZE_URL = 'https://github.com/login/oauth/authorize'
     ACCESS_TOKEN_URL = 'https://github.com/login/oauth/access_token'
+    AUTHENTICATED_USER_URL = 'https://api.github.com/user' #https://developer.github.com/v3/users/#get-the-authenticated-user
 
     # See https://developer.github.com/v3/oauth/#web-application-flow
     # 1.step
@@ -14,6 +15,8 @@ module Apis
       "#{AUTHORIZE_URL}?#{options.to_query}"
     end
 
+    # See https://developer.github.com/v3/oauth/#web-application-flow
+    # 2.step
     def self.get_access_token(user, code, redirect_url=nil)
       self.headers 'Accept' => 'application/json'
       params = {
@@ -23,6 +26,13 @@ module Apis
         # :redirect_uri => redirect_url
       }
       self.post(ACCESS_TOKEN_URL, :query => params)['access_token']
+    end
+
+    # https://developer.github.com/v3/#authentication
+    def self.get_user_information(user)
+      self.headers 'Authorization' => "token #{user.github_access_token}", 'User-Agent' => Rails.application.class.parent_name
+          # self.headers 'Accept' => 'application/json'
+      self.get(AUTHENTICATED_USER_URL)['login']
     end
   end
 end
