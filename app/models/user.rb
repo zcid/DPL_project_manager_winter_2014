@@ -8,7 +8,9 @@ class User < ActiveRecord::Base
 
   validates :name, presence: true
 
- def generate_github_state!
+  scope :with_github_state, ->(state_param) { where(github_state: state_param).where.not(github_state: nil) }
+
+  def generate_github_state!
     self.update_attributes(github_state: self.generate_github_state)
     self.github_state
   end
