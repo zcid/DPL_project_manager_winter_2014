@@ -7,4 +7,13 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   validates :name, presence: true
+
+ def generate_github_state!
+    self.update_attributes(github_state: self.generate_github_state)
+    self.github_state
+  end
+
+  def generate_github_state
+    SecureRandom.hex
+  end
 end
