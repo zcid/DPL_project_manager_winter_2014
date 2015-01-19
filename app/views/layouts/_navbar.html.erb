@@ -30,8 +30,7 @@
                   <li><a href="https://devpointlabs.slack.com/team/kuddox" target="_blank">Khuong</a></li>
                 </ul>
               </li>
-              Logged in as <strong><%= current_user.email %></strong>.
-              <li><%= link_to 'Edit profile', edit_user_registration_path, class: 'nav-text' %> |</li>
+              <li><%= link_to 'Edit profile', edit_user_registration_path, class: 'nav-text' %></li>
               <li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'nav-text'  %></li>
             <% else %>
               <li><%= link_to "Sign up", new_user_registration_path, class: 'nav-text'  %></li>
@@ -42,5 +41,8 @@
         
       </ul>
     </nav>
+    <% if user_signed_in? %>
+      <div class='pull-right' >Logged in as <strong><%= current_user.email %></strong>.</div>
+    <% end %>
   </div>
 </header>
