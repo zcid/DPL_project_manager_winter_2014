@@ -6,22 +6,24 @@
   </head>
   <body>
     <h1 class="text-center">Projects</h1>
-    <table id='project-table' class="table table-bordered row">
-      <thead>
-        <tr>
-          <th class="col-md-3">Team</th>
-          <th class="col-md-2">Title</th>
-          <th class="col-md-5 text-nowrap">Description</th>
-          <th class="col-md-1">Deadline</th>
-          <th class="col-md-1">Updates</th>
-        </tr>
-      </thead>
-      <tbody  class="table-list">
-        <% @projects.each do |project| %>
-          <%= render :partial => 'project_row', locals: {project: project} %>
-        <% end %>
-      </tbody>
-    </table>
+    <div id='table_div'>
+      <table id='project-table' class="table table-bordered row">
+        <thead>
+          <tr>
+            <th class="col-md-3">Team</th>
+            <th class="col-md-2">Title</th>
+            <th class="col-md-5 text-nowrap">Description</th>
+            <th class="col-md-1">Deadline</th>
+            <th class="col-md-1">Updates</th>
+          </tr>
+        </thead>
+        <tbody  class="table-list">
+          <% @projects.each do |project| %>
+            <%= render :partial => 'project_row', locals: {project: project} %>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
     <%#= link_to 'New Project', new_project_path, class: "btn btn-default" %>
     <!-- Button trigger modal -->
     <%= link_to 'New Project', new_project_path, id: 'new-project-ajax', class: "btn btn-primary", remote: true %>
