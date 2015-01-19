@@ -13,7 +13,11 @@
                 <a href="#" class="dropdown-toggle nav-text" data-toggle="dropdown" role="button" aria-expanded="false">The Team <span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
                   <% User.all.each do |user| %>
-                    <li><%= link_to user.name, user_path(user) %></li>
+                    <li>
+                      <%= link_to user_path(user) do %>
+                        <%= icon('github') if user.is_github_authorized? %> <%= user.name %>
+                      <% end %>
+                    </li>
                   <% end %>
                 </ul>
               </li>

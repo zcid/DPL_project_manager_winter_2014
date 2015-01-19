@@ -9,6 +9,10 @@
           <th>Email</th>
           <td><%= @user.email %></td>
         </tr>
+        <tr>
+          <th>Is Github Authorized?</th>
+          <td><%= @user.is_github_authorized? ? 'Yes' : 'No' %></td>
+        </tr>
       </tbody>
     </table>
   </div>
