@@ -38,6 +38,9 @@ gem 'httparty'
 # Awesome fonts yo!
 gem 'font-awesome-sass'
 
+# User authentication 
+gem 'devise'
+
 group :development, :test do
   gem 'spring-commands-rspec'
   gem 'rspec'
