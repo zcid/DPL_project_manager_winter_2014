@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   get 'apis/callback', to: 'apis#github_callback', as: 'github_callback'
 
   devise_for :users, :controllers => { registrations: 'registrations' }
@@ -14,6 +15,8 @@ Rails.application.routes.draw do
 
   get 'easter_egg' => 'static_pages#easter_egg'
   post 'easter_egg' => 'static_pages#easter_egg'
+
+  resources :users, only: [:show]
 
   resources :projects do
     resources :tasks, except: [:show, :index] do

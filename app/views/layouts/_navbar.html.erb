@@ -12,21 +12,9 @@
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle nav-text" data-toggle="dropdown" role="button" aria-expanded="false">The Team <span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
-                  <li><a href="https://devpointlabs.slack.com/team/parkjoonw" target="_blank">Joon</a></li>
-                  <li><a href="https://devpointlabs.slack.com/team/cwcarlson10" target="_blank">Chris</a></li>
-                  <li><a href="https://devpointlabs.slack.com/team/siskandarian" target="_blank">Seta</a></li>
-                  <li><a href="https://devpointlabs.slack.com/team/craig10n" target="_blank">Craig</a></li>
-                  <li><a href="https://devpointlabs.slack.com/team/n.vo" target="_blank">Nick V.</a></li>
-                  <li><a href="https://devpointlabs.slack.com/team/evjay" target="_blank">Evan</a></li>
-                  <li><a href="https://devpointlabs.slack.com/team/lindsayhammon" target="_blank">Lindsay</a></li>
-                  <li><a href="https://devpointlabs.slack.com/team/zcid" target="_blank">Nick H.</a></li>
-                  <li><a href="https://devpointlabs.slack.com/team/annenichols" target="_blank">Anne</a></li>
-                  <li><a href="https://devpointlabs.slack.com/team/amandawalter" target="_blank">Amanda</a></li>
-                  <li><a href="https://devpointlabs.slack.com/team/topher" target="_blank">Topher</a></li>
-                  <li><a href="https://devpointlabs.slack.com/team/markymarrk" target="_blank">Marcos</a></li>
-                  <li><a href="https://devpointlabs.slack.com/team/kmowie" target="_blank">Konrad</a></li>
-                  <li><a href="https://devpointlabs.slack.com/team/gollum" target="_blank">Kevin</a></li>
-                  <li><a href="https://devpointlabs.slack.com/team/kuddox" target="_blank">Khuong</a></li>
+                  <% User.all.each do |user| %>
+                    <li><%= link_to user.name, user_path(user) %></li>
+                  <% end %>
                 </ul>
               </li>
               <li><%= link_to 'Edit profile', edit_user_registration_path, class: 'nav-text' %></li>
