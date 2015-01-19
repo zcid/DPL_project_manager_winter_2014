@@ -27,7 +27,8 @@
         <thead>
             <tr>
                 <th class="col-md-3 text-center">Title</th>
-                <th class="col-md-5 text-center">Description</th>
+                <th class="col-md-1.5 text-center">name</th>
+                <th class="col-md-3.5 text-center">Description</th>
                 <th class="col-md-1.5 text-center">Deadline</th>
                 <th class="col-md-1 text-center">Completed</th>
                 <th class="col-md-1.5 text-center"></th>
@@ -38,6 +39,7 @@
 
               <tr class="table-list" data-id='<%= task.id %>'>
                   <td class="col-md-3 task-title"><%= task.title %></td>
+                  <td class="col-md-1 task-user"><%= task.user.name %></td>
                   <td class="col-md-5"><%= task.description %></td>
                   <td class="col-md-1.5"><%= task.deadline %></td>
                   <td class="col-md-1 task-completed"><%= task.is_completed %></td>

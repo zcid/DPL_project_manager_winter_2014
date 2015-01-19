@@ -2,7 +2,7 @@ class TasksController < ApplicationController
 
   before_action :set_project, only: [:new, :update, :create, :destroy, :edit, :mark_completed, :mark_not_completed]
   before_action :set_task, only: [:edit, :update, :destroy]
-
+  before_action :set_users, only: [:new, :edit]
 
   def new
     @task = @project.tasks.build
@@ -43,6 +43,10 @@ class TasksController < ApplicationController
 
   private
 
+    def set_users
+      @users = User.all
+    end
+
     def set_completed_flag(task_id, complete_value)
       @task = @project.tasks.find_by(id: task_id)
       @task.update_attributes(is_completed: complete_value)
@@ -57,6 +61,6 @@ class TasksController < ApplicationController
     end
 
     def task_params
-      params.require(:task).permit(:title, :description, :deadline, :is_completed)
+      params.require(:task).permit(:title, :description, :deadline, :is_completed, :user_id)
     end
 end
