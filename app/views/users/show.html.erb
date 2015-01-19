@@ -11,7 +11,7 @@
         </tr>
         <tr>
           <th>Is Github Authorized?</th>
-          <td><%= @user.is_github_authorized? ? 'Yes' : 'No' %></td>
+          <td><%= @user.is_github_authorized? ? "#{icon('github-alt')} #{user.github_username}" : 'No' %></td>
         </tr>
       </tbody>
     </table>
