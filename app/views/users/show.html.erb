@@ -11,7 +11,13 @@
         </tr>
         <tr>
           <th>Is Github Authorized?</th>
-          <td><%= @user.is_github_authorized? ? "#{icon('github-alt')} #{user.github_username}" : 'No' %></td>
+          <td>
+            <% if @user.is_github_authorized? %>
+              <%= icon('github-alt') %> <%= link_to @user.github_username, "https://github.com/#{@user.github_username}" %>
+            <% else %>
+              No <%= github_authorize_button() %>
+            <% end %>
+          </td>
         </tr>
         <tr>
           <th colspan='2'><%= link_to 'Edit Information', edit_user_registration_path(@user), class: 'btn btn-primary' %></th>
