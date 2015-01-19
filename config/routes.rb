@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'apis/callback', to: 'apis#github_callback', as: 'github_callback'
+
   devise_for :users, :controllers => { registrations: 'registrations' }
 
   get 'tasks/new'
