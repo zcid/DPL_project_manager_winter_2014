@@ -10,5 +10,5 @@ User.create!(
     name: 'Winter Cohort',
     email: 'winter2015@devpointlabs.com',
     password: 'password',
-    password_confirmation: 'password',
+    password_confirmation: 'password'
   )
