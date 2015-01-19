@@ -18,4 +18,8 @@ class User < ActiveRecord::Base
   def generate_github_state
     SecureRandom.hex
   end
+
+  def authorized_for_github!(authorized_token)
+    self.update_attributes(github_access_token: authorized_token, github_state: 'completed')
+  end
 end
