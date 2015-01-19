@@ -6,7 +6,6 @@
       <ul class="nav navbar-nav pull-right">
         <li><%= link_to "Home", root_path, class: "nav-text" %></li>
         <li>
-          <!-- <p class=" pull-right"> -->
            <% if user_signed_in? %> 
               <li><%= link_to "Projects", projects_path, class: "nav-text" %></li>
               <li><%= link_to "About", about_path, class: "nav-text" %></li>
@@ -36,13 +35,12 @@
               <li><%= link_to "Sign up", new_user_registration_path, class: 'nav-text'  %></li>
               <li><%= link_to "Login", new_user_session_path, class: 'nav-text'  %></li>
             <% end %>
-          <!-- </p> -->
         </li>
         
       </ul>
     </nav>
     <% if user_signed_in? %>
-      <div class='pull-right' >Logged in as <strong><%= current_user.email %></strong>.</div>
+      <div class='pull-right' >Logged in as <strong><%= current_user.name %></strong>.</div>
     <% end %>
   </div>
 </header>
