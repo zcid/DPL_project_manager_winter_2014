@@ -42,7 +42,7 @@ gem 'font-awesome-sass'
 gem 'devise'
 
 group :development, :test do
-  gem 'dotenv'
+  gem 'dotenv-rails'
   gem 'spring-commands-rspec'
   gem 'rspec'
   gem 'rspec-rails'
